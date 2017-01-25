@@ -1,13 +1,14 @@
 #!/bin/bash
+STORY_NUMBER=`git log -1 HEAD --pretty=format:%s | grep -Po '(?<=ch)(\d+)'`
 
-if [ ! $WERCKER_NOTIFY_RELEASE_NOTES_STORY_NUMBER ] ; then
+if [ -z $STORY_NUMBER ] ; then
     echo "No release specified, thats not a problem, just letting you know."
     exit 0
 fi
 
- curl -v -H "x-api-key: $WERCKER_NOTIFY_RELEASE_NOTES_API_KEY" \
+curl -v -H "x-api-key: $WERCKER_NOTIFY_RELEASE_NOTES_API_KEY" \
   -H 'Content-Type: application/json' \
-  "$WERCKER_NOTIFY_RELEASE_NOTES_API_URL/release/$WERCKER_NOTIFY_RELEASE_NOTES_STORY_NUMBER"
+  "$WERCKER_NOTIFY_RELEASE_NOTES_API_URL/release/$STORY_NUMBER"
 
 
 
