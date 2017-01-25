@@ -1,0 +1,7 @@
+name: notify-release-notes
+version: 0.0.1
+description: Updates a story in Clubhouse to be deployed, and publishes the relese notes to slack
+keywords:
+  - clubhouse
+  - release notes
+  - aws lambda
