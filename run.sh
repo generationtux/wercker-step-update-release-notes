@@ -1,4 +1,7 @@
 #!/bin/bash
+
+apt-get install -y git
+
 STORY_NUMBER=`git log -1 HEAD --pretty=format:%s | grep -Po '(?<=ch)(\d+)'`
 
 if [ -z $STORY_NUMBER ] ; then
