@@ -5,3 +5,10 @@ keywords:
   - clubhouse
   - release notes
   - aws lambda
+properties:
+  api-key:
+    type: string
+    required: true
+  api-url:
+    type: string
+    required: true
