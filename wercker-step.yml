@@ -1,5 +1,5 @@
 name: notify-release-notes
-version: 0.0.3
+version: 0.0.4
 description: Updates a story in Clubhouse to be deployed, and publishes the relese notes to slack
 keywords:
   - clubhouse
